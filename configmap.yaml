@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: msvc-usuarios
+data:
+#  lb_auth_issuer_uri: http://127.0.0.1:9000
+#  lb_usuarios_uri: http://127.0.0.1:8001
+  port: "8001"
+  db_host: "mysql8:3306"
+  database: msvc_usuarios
+  username: root
+  password: sasa
+  course_url: "msvc-cursos:8002"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: msvc-cursos
+data:
+  port: "8002"
+  db_host: "postgres14:5432"
+  database: msvc_cursos
+  username: postgres
+  password: "12345678"
+  usuario_url: "msvc-usuarios:8001"
