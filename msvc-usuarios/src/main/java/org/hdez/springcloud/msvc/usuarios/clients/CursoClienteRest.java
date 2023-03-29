@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 //@FeignClient(name = "msvc-cursos")
 
 //comunicarnos a aplicaciones o base de datos de nuestro equipo local con host.docker.internal
-@FeignClient(name = "msvc-cursos", url = "host.docker.internal:8002")
+//@FeignClient(name = "msvc-cursos", url = "host.docker.internal:8002")
+
+//Configurando comunicacion con la red network - contenedor
+@FeignClient(name = "msvc-cursos", url = "msvc-cursos:8002")
 
 //local comunicacion feing
 //@FeignClient(name = "msvc-cursos", url = "localhost:8002")

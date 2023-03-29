@@ -8,8 +8,12 @@ import java.util.List;
 //comunicacion servicio
 //@FeignClient(name = "msvc-usuarios")
 
+//Configurando comunicacion con la red network - contenedor
+@FeignClient(name = "msvc-usuarios", url = "msvc-usuarios:8001")
+
+
 //local comunicacion feing
-@FeignClient(name = "msvc-usuarios", url = "localhost:8001")
+//@FeignClient(name = "msvc-usuarios", url = "localhost:8001")
 public interface UsuarioClientRest {
     @GetMapping("/{id}")
     Usuario detalle(@PathVariable Long id);
